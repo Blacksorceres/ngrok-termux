@@ -44,7 +44,7 @@ x86_64)
     echo "Arquitetura desconocida"
 esac
 
-wget "https://github.com/Blacksorceres/ngrok-termux/blob/master/ngrok-stable-linux-${architectureURL}.zip?raw=true" -O ngrok.zip
+wget "https://github.com/Blacksorceres/black-termux-stables/blob/master/ngrok-stable-linux-${architectureURL}.zip?raw=true" -O ngrok.zip
 unzip ngrok.zip
 cat ngrok > /data/data/com.termux/files/usr/bin/ngrok
 chmod 700 /data/data/com.termux/files/usr/bin/ngrok
