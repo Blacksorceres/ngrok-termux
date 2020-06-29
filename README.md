@@ -1,38 +1,40 @@
 # ngrok-termux
 ngrok funcional,version estable.
 
-#NOTA : Este script instala ngrok a manera global ,ya listo a usar solo deberas poner tu tokken y asi podras ejecutarlo desde cualquir ubicacion .
+#INSTALACION Y BREVE EXPLICACION :
 
-#PERO : si en algun momento tienes un ejecutable de ngrok =
+#NOTA : 
+1) Este script instala ngrok a manera global ,ya listo a usar solo deberas poner tu tokken y asi podras ejecutarlo desde cualquier ubicacion .
 
-#esto evita muchos errores;     
+2) Este ngrok esta ubicado en bin,y ya tiene los permisos necesarios para que lo ejecutes desde cualquier ubicacion ,solo poniendo "ngrok" y ya no es necesario el punto barra ( ./ngrok ) .
 
-1- globaliza ngrok:
+3) Es muy imporatente que copies ésta version que esta en bin/ ,dentro de tu carpeta con la herramienta que vas a usar antes de ejecutarla,
+ya que las herramientas verifican si esta ngrok dentro de su carpeta y si no esta ngrok dentro instalan uno por cuenta propia (lo que causa incompatibilidad)
+y errores al obtener el enlace en tus herramientas.
 
-cp ngrok /data/data/com.termux/files/usr/bin && chmod a+x /data/data/com.termux/files/usr/bin/ngrok
+x)ejemplo de copiado:
+(asumiendo que clone un backdoor en mi home de termux y la carpeta clonada se llama "backdoor"
 
-2- ahora podran ejecutar ngrok desde cualquier ubicacion
+cp /data/data/com.termux/files/usr/bin/ngrok &HOME/backdoor
 
-(ngrok es solo un ejecutable y se ejecuta normalmenete desde su ubicacion con : ./ )
 
-3- ngrok requiere que abras una cuenta en ngrok.com ,es gratis solo se necesita un correo,copia el tokken
+4) Debes abrir tu cuenta ngrok , en https://ngrok.com ,ve a "signup" y abre cuenta con tu correo (es facil,gratis y no demora mas de dos minutos).
 
-excepto el ./ (ya no es necesario si globalizas ngrok en bin )
+5) Una vez iniciada sesion en ngrok en el dashboard te dara cuatro comandos ,solo copia el segundo comando que dice :
+ngrok authtokken blablablablablablablab7byn87c58inhgc85
+pegalo en termux ,(sin el punto barra ./ ,eso ya no es necesario)
 
-pegalo en termux y listo.
+6)ahora ya puedes usar ngrok tanto dentro de tu carpeta backdoor ,como en cualquier ubicacion de termux.
+ya que hay herramientas que no abren ngrok por defecto como ejemplo metasploit ,donde debes abrirlo manualmente en otra ventana de sesion termux.
 
-4- es importante (importantisimo) que ESE ngrok que tienes en bin/ lo copies dentro de cada una de las carpetas
+########################################## i n s t a l a c i o n ######################################################################
 
-clonadas de tus herramientas ANTES de ejecutar los scripts para que cuando los ejecutes detecten el ngrok que acabas de copiar.(caso contrario puede haber errores)
+instalacion en termux :
 
-los proyectos de git clonados al ejecutarse suelen verfificar si hay dentro de ellos un ejecutable de ngrok,
-
-al no estar presentes ellos descargan uno (que no sera la misma version que tenemos en bin y por eso generara problemas.
-
-5- ngrok es cuenta gratis : NO permite dos sesiones a la vez, no debes tener ngrok abierto cuando vayas a ejecutar tus herramientas de script que lo activan solo...
-
-(hay herramientas que no lo llaman solo y en ese caso si hay que ejecutarlo manualmente)
-
-6- buena suerte...
-
+pkg install git wget 
+git clone https://github.com/Blacksorceres/ngrok-termux.git
+cd ngrok-termux
+bash black-ngrok.sh
+_________________________________________________________________________________________________________________________________________
+Buena suerte...
 #blacksorceres...
