@@ -32,8 +32,11 @@ ya que hay herramientas que no abren ngrok por defecto como ejemplo metasploit ,
 instalacion en termux :
 
 pkg install git wget 
+
 git clone https://github.com/Blacksorceres/ngrok-termux.git
+
 cd ngrok-termux
+
 bash black-ngrok.sh
 _________________________________________________________________________________________________________________________________________
 Buena suerte...
